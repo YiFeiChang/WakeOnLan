@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Wake On LAN 操作介面</h1>
+            <p class="lead">用來發送 Magic Packet 喚醒指定電腦的簡易操作介面</p>
+        </div>
+        <dt>此按鈕用來測試API</dt>
+        <button id="ApiTestButton1" type="button" class="btn btn-primary btn-lg">測試</button>
+        <hr />
+        <dt>此按鈕用來測試API</dt>
+        <button id="ApiTestButton2" type="button" class="btn btn-primary btn-lg">測試</button>
+    </div>
+    <script>
+        $('#ApiTestButton1').click(function () {
+            $.ajax({
+                method: 'GET',
+                url: '/User',
+                async: true,
+                cache: false,
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        });
+        $('#ApiTestButton2').click(function () {
+            $.ajax({
+                method: 'POST',
+                url: '/User',
+                async: true,
+                cache: false,
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    Name: 'fei',
+                    Password: '485967'
+                }),
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
