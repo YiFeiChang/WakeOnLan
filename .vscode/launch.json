@@ -11,7 +11,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/WebSite/bin/Debug/netcoreapp3.1/WebSite.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/WebSite",
+            "cwd": "${workspaceFolder}/WebSite/bin/Debug/netcoreapp3.1",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
@@ -19,9 +19,6 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
-            },
-            "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
             }
         },
         {
